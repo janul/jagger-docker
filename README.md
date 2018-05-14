@@ -45,5 +45,4 @@
 
 
 ### TODO 
-* finish steps after the first run
-* add support for custom http cert
+* add support to run jagger more than one replica
