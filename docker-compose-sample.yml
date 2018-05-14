@@ -96,12 +96,12 @@ secrets:
     external: true
   metasigner-pass:
     external: true
-  mysql_ca.crt:
-    external: true
-  mysql_client_src.crt:
-    external: true
-  mysql_client_src.key:
-    external: true
+#  mysql_ca.crt:
+#    external: true
+#  mysql_client_src.crt:
+#    external: true
+#  mysql_client_src.key:
+#    external: true
   https_ca: 
     external: true
   https_crt: 
