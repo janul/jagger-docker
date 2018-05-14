@@ -46,3 +46,6 @@
 
 ### TODO 
 * add support to run jagger more than one replica
+* add option to add override config 
+* mailing
+* tasks scheduler
