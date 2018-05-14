@@ -23,12 +23,16 @@ services:
       DB_HOST: db
       DB_PASSWORD: rr312
       DB_USER: rr3
+#     DB_SSL: true
+      MEMCACHE_HOST: memcache
       RABBITMQ_HOST: rabbitmq
       RABBITMQ_PASS: password
       RABBITMQ_USER: admin
       RABBITMQ_VHOST: /
       VIRTUAL_HOST: jagger.example.com
-    image: janul/jagger:test-1.4
+#     JAGGER_SYNC_PASS: randomstring
+#     JAGGER_SETUP: true
+    image: janul/jagger:test-1.9
     links:
     - db
     - rabbitmq
@@ -41,6 +45,17 @@ services:
     - source: metasigner-cert
     - source: metasigner-key
     - source: metasigner-pass
+    - source: https_ca
+      target: https_ca.crt
+    - source: https_crt
+      target: https.crt
+    - source: https_key
+      target: https.key
+#   - source: mysql_ca.crt
+#   - source: mysql_client_src.crt
+#     target: mysql_client.crt
+#   - source: mysql_client_src.key
+#     target: mysql_client.key
     volumes:
     - jagger_filescache:/opt/Jagger/application/cache:rw
     - jagger_config:/opt/Jagger/application/config:rw
@@ -81,3 +96,16 @@ secrets:
     external: true
   metasigner-pass:
     external: true
+  mysql_ca.crt:
+    external: true
+  mysql_client_src.crt:
+    external: true
+  mysql_client_src.key:
+    external: true
+  https_ca: 
+    external: true
+  https_crt: 
+    external: true
+  https_key: 
+    external: true
+
