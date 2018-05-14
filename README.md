@@ -45,6 +45,7 @@
 
 
 ### TODO 
+* simplify populating tables
 * add support to run jagger more than one replica
 * add option to add override config 
 * mailing
