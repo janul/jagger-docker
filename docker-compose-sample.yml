@@ -32,7 +32,7 @@ services:
       VIRTUAL_HOST: jagger.example.com
 #     JAGGER_SYNC_PASS: randomstring
 #     JAGGER_SETUP: true
-    image: janul/jagger:test-1.9
+    image: janul/jagger:test-1.12
     links:
     - db
     - rabbitmq
