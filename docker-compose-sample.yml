@@ -19,7 +19,9 @@ services:
     depends_on:
     - db
     - rabbitmq
-    environment:
+    environment:  
+      JAGGER_MAILER: 1
+      JAGGER_CRON: 1
       DB_HOST: db
       DB_PASSWORD: rr312
       DB_USER: rr3
@@ -32,7 +34,7 @@ services:
       VIRTUAL_HOST: jagger.example.com
 #     JAGGER_SYNC_PASS: randomstring
 #     JAGGER_SETUP: true
-    image: janul/jagger:test-1.12
+    image: janul/jagger:2018052704
     links:
     - db
     - rabbitmq
