@@ -34,7 +34,7 @@ services:
       VIRTUAL_HOST: jagger.example.com
 #     JAGGER_SYNC_PASS: randomstring
 #     JAGGER_SETUP: true
-    image: janul/jagger:2018052806
+    image: janul/jagger:latest
     links:
     - db
     - rabbitmq
