@@ -20,12 +20,17 @@ services:
     - db
     - rabbitmq
     environment:  
-      JAGGER_MAILER: 1
-      JAGGER_CRON: 1
+      JAGGER_MAILER: 1 #default 0
+      JAGGER_CRON: 1 # default 0
+      JAGGER_WEB: 1 # default 1
+      BEHIND_PROXY: 0 # default 0
+      HTTPS_DISABLED: 1 #default 0
       DB_HOST: db
       DB_PASSWORD: rr312
       DB_USER: rr3
-#     DB_SSL: true
+#     DB_SSL: "true" 
+#     DB_SSL_VERIFY: 0
+      DB_CHARSET: latin1
       MEMCACHE_HOST: memcache
       RABBITMQ_HOST: rabbitmq
       RABBITMQ_PASS: password
@@ -33,7 +38,7 @@ services:
       RABBITMQ_VHOST: /
       VIRTUAL_HOST: jagger.example.com
 #     JAGGER_SYNC_PASS: randomstring
-#     JAGGER_SETUP: true
+#     JAGGER_SETUP: true # default not set
     image: janul/jagger:latest
     links:
     - db
