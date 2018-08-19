@@ -2,12 +2,21 @@
 ## services
 ### jagger web
 1. image on docker hub: janul/jagger
-2. support environment variables and their default values:
+2. custom configuration:
+ - to set/override some configs you can mount volume with your configuration to /opt/Jagger/application/config/config_rr_override.php
+ - to enable and set email you need to mount you config to /opt/Jagger/application/config/email.php
+3. support environment variables and their default values:
 - JAGGER_DOCKER = 1  ```do not override this variable```
 - JAGGER_WEB = 1 ```tells if container should run web```
+- BEHIND_PROXY = 0 
+- HTTPS_DISABLED = 0 ``` if set to 1 then ssl module is unloaded - makes sense when BEHIND_PROXY is set to 1```
 - JAGGER_MAILER = 0 ```run monitor to send mail from the queue.```
 - JAGGER_CRON = 0 ``` run tasks scheduler```
 - JAGGER_MSIGNER_WRK = 0 ``` run rabbitmq consumer for signing metadata``` 
+- JAGGER_SETUP 
+- JAGGER_SYNC_PASS = ''
+- JAGGER_LOGS
+
 - MEMCACHE_HOST ```Required:  hostname of memcache server```
 - DB_HOST ```Required: hostname of mysql server```
 - DB_PASSWORD: ```Required: db password```
@@ -15,6 +24,12 @@
 - DB_CHARSET = latin1
 - VIRTUAL_HOST ```Required```
 - JAGGER_URI = /rr3 ```Alias with webroot of application: Do not add / at the end```
+- RABBITMQ_VHOST
+- RABBITMQ_HOST
+- RABBITMQ_USER
+- RABBITMQ_PASS
+
+4.then https://github.com/Edugate/Jagger/blob/1.x-stable/application/config/dockerized.php config is loaded 
 
 
 ### memcache
