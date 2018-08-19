@@ -18,9 +18,13 @@
 
 
 ### memcache
+Required
 ### rabbitmq
+Optional
 ### db
+you can either use exernal db or create service in the stack
 ### proxy
+Tested successfuly with https://github.com/jwilder/nginx-proxy  and https://traefik.io/ however nginx-proxy  cannot (at least for now) discover containers on remote docker nodes.
 
 
 ## docker stack demo
