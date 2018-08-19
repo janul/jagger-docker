@@ -41,12 +41,3 @@
    #./doctrine orm:schema-tool:create
    ```
 
-
-
-
-### TODO 
-* simplify populating tables
-* add support to run jagger more than one replica
-* add option to add override config 
-* mailing
-* tasks scheduler
