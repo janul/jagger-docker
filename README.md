@@ -1,4 +1,26 @@
-# jagger-docker 
+# jagger-docker in docker swarm
+## services
+### jagger web
+1. image on docker hub: janul/jagger
+2. support environment variables and their default values:
+- JAGGER_DOCKER = 1  ```do not override this variable```
+- JAGGER_WEB = 1 ```tells if container should run web```
+- JAGGER_MAILER = 0 ```run monitor to send mail from the queue.```
+- JAGGER_CRON = 0 ``` run tasks scheduler```
+- JAGGER_MSIGNER_WRK = 0 ``` run rabbitmq consumer for signing metadata``` 
+- MEMCACHE_HOST ```Required:  hostname of memcache server```
+- DB_HOST ```Required: hostname of mysql server```
+- DB_PASSWORD: ```Required: db password```
+- DB_USER: ```Required: db user```
+- DB_CHARSET = latin1
+- VIRTUAL_HOST ```Required```
+- JAGGER_URI = /rr3 ```Alias with webroot of application: Do not add / at the end```
+
+
+### memcache
+### rabbitmq
+### db
+### proxy
 
 
 ## docker stack demo
