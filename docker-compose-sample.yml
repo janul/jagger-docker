@@ -23,6 +23,8 @@ services:
       JAGGER_MAILER: 1 #default 0
       JAGGER_CRON: 1 # default 0
       JAGGER_WEB: 1 # default 1
+      JAGGER_URI: / # default /rr3
+      JAGGER_MSIGNER_WRK: 0 # default 0
       BEHIND_PROXY: 0 # default 0
       HTTPS_DISABLED: 1 #default 0
       DB_HOST: db
